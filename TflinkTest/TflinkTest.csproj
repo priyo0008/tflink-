@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D69DFA7-DC01-4BB3-B99B-74A714306402}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TflinkTest</RootNamespace>
+    <AssemblyName>TflinkTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="Admin\Image\family.jpg" />
+    <Content Include="Admin\Image\family1.jpg" />
+    <Content Include="Admin\Image\image3.jpg" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\UnlockCust.aspx" />
+    <Content Include="Admin\UpdateAbout.aspx" />
+    <Content Include="Admin\UpdateContact.aspx" />
+    <Content Include="Admin\UpdateHome.aspx" />
+    <Content Include="Admin\UpdateSearch.aspx" />
+    <Content Include="Array.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FamilyTree\AddChildren.aspx" />
+    <Content Include="FamilyTree\Addparentchoose.aspx" />
+    <Content Include="FamilyTree\AddParents.aspx" />
+    <Content Include="FamilyTree\Addpictures.aspx" />
+    <Content Include="FamilyTree\AddSpouses.aspx" />
+    <Content Include="FamilyTree\Add_Child.aspx" />
+    <Content Include="FamilyTree\Add_Parents.aspx" />
+    <Content Include="FamilyTree\Add_Spouses.aspx" />
+    <Content Include="FamilyTree\AllRequest.aspx" />
+    <Content Include="FamilyTree\Dashboard.aspx" />
+    <Content Include="FamilyTree\Edit_Parents.aspx" />
+    <Content Include="FamilyTree\ExistingAllData.aspx" />
+    <Content Include="FamilyTree\FamilyForest.aspx" />
+    <Content Include="FamilyTree\images\backimg.jpeg" />
+    <Content Include="FamilyTree\images\camera1.png" />
+    <Content Include="FamilyTree\images\chanepswimg.png" />
+    <Content Include="FamilyTree\images\defaultimage.jpg" />
+    <Content Include="FamilyTree\images\deleteimg.jpg" />
+    <Content Include="FamilyTree\images\editbtn.png" />
+    <Content Include="FamilyTree\images\greenimage.jpg" />
+    <Content Include="FamilyTree\images\greenimg2.jpg" />
+    <Content Include="FamilyTree\images\image4.png" />
+    <Content Include="FamilyTree\images\loader.gif" />
+    <Content Include="FamilyTree\images\loader2.gif" />
+    <Content Include="FamilyTree\images\tree2.jpg" />
+    <Content Include="FamilyTree\images\updateimg.png" />
+    <Content Include="FamilyTree\Logout.aspx" />
+    <Content Include="FamilyTree\MyTree.aspx" />
+    <Content Include="FamilyTree\MyTree1.aspx" />
+    <Content Include="FamilyTree\MyTree2.aspx" />
+    <Content Include="FamilyTree\NewChildren.aspx" />
+    <Content Include="FamilyTree\NewPage.aspx" />
+    <Content Include="FamilyTree\NewSpouse.aspx" />
+    <Content Include="FamilyTree\Parent.aspx" />
+    <Content Include="FamilyTree\Pictures.aspx" />
+    <Content Include="FamilyTree\Popuptest.aspx" />
+    <Content Include="FamilyTree\ProfileList.aspx" />
+    <Content Include="FamilyTree\Projects.aspx" />
+    <Content Include="FamilyTree\Test.aspx" />
+    <Content Include="FamilyTree\View.aspx" />
+    <Content Include="FamilyTree\Welcome.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\login-image.png" />
+    <Content Include="images\search.jpg" />
+    <Content Include="images\tree.jpg" />
+    <Content Include="JoinUs.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\.DS_Store" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="images\.DS_Store" />
+    <Content Include="scss\.DS_Store" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_site-base.scss" />
+    <Content Include="scss\_site-blocks.scss" />
+    <Content Include="scss\_site-navbar.scss" />
+    <Content Include="scss\bootstrap\.DS_Store" />
+    <Content Include="scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="scss\bootstrap\bootstrap.scss" />
+    <Content Include="scss\bootstrap\_alert.scss" />
+    <Content Include="scss\bootstrap\_badge.scss" />
+    <Content Include="scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="scss\bootstrap\_button-group.scss" />
+    <Content Include="scss\bootstrap\_buttons.scss" />
+    <Content Include="scss\bootstrap\_card.scss" />
+    <Content Include="scss\bootstrap\_carousel.scss" />
+    <Content Include="scss\bootstrap\_close.scss" />
+    <Content Include="scss\bootstrap\_code.scss" />
+    <Content Include="scss\bootstrap\_custom-forms.scss" />
+    <Content Include="scss\bootstrap\_dropdown.scss" />
+    <Content Include="scss\bootstrap\_forms.scss" />
+    <Content Include="scss\bootstrap\_functions.scss" />
+    <Content Include="scss\bootstrap\_grid.scss" />
+    <Content Include="scss\bootstrap\_images.scss" />
+    <Content Include="scss\bootstrap\_input-group.scss" />
+    <Content Include="scss\bootstrap\_jumbotron.scss" />
+    <Content Include="scss\bootstrap\_list-group.scss" />
+    <Content Include="scss\bootstrap\_media.scss" />
+    <Content Include="scss\bootstrap\_mixins.scss" />
+    <Content Include="scss\bootstrap\_modal.scss" />
+    <Content Include="scss\bootstrap\_nav.scss" />
+    <Content Include="scss\bootstrap\_navbar.scss" />
+    <Content Include="scss\bootstrap\_pagination.scss" />
+    <Content Include="scss\bootstrap\_popover.scss" />
+    <Content Include="scss\bootstrap\_print.scss" />
+    <Content Include="scss\bootstrap\_progress.scss" />
+    <Content Include="scss\bootstrap\_reboot.scss" />
+    <Content Include="scss\bootstrap\_root.scss" />
+    <Content Include="scss\bootstrap\_spinners.scss" />
+    <Content Include="scss\bootstrap\_tables.scss" />
+    <Content Include="scss\bootstrap\_toasts.scss" />
+    <Content Include="scss\bootstrap\_tooltip.scss" />
+    <Content Include="scss\bootstrap\_transitions.scss" />
+    <Content Include="scss\bootstrap\_type.scss" />
+    <Content Include="scss\bootstrap\_utilities.scss" />
+    <Content Include="scss\bootstrap\_variables.scss" />
+    <Content Include="MainMaster.Master" />
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="FamilyTree\Familymaster.Master" />
+    <Content Include="FamilyTree\images\treeimage.webp" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Test3.aspx" />
+    <Content Include="Admin\Testt1.aspx" />
+    <Content Include="css\aos.css" />
+    <Content Include="css\bootstrap-datepicker.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap\bootstrap-grid.css" />
+    <Content Include="css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap\bootstrap.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.fancybox.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\mediaelementplayer.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\owl.theme.default.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="images\hero_1.jpg" />
+    <Content Include="images\hero_2.jpg" />
+    <Content Include="images\hero_3.jpg" />
+    <Content Include="images\img_1.jpg" />
+    <Content Include="images\img_2.jpg" />
+    <Content Include="images\img_3.jpg" />
+    <Content Include="images\img_4.jpg" />
+    <Content Include="images\img_5.jpg" />
+    <Content Include="images\img_6.jpg" />
+    <Content Include="images\person_1.jpg" />
+    <Content Include="images\person_2.jpg" />
+    <Content Include="images\person_3.jpg" />
+    <Content Include="images\person_4.jpg" />
+    <Content Include="images\person_5.jpg" />
+    <Content Include="images\post_1.jpg" />
+    <Content Include="images\post_2.jpg" />
+    <Content Include="images\post_3.jpg" />
+    <Content Include="images\post_4.jpg" />
+    <Content Include="images\post_5.jpg" />
+    <Content Include="images\post_6.jpg" />
+    <Content Include="js\aos.js" />
+    <Content Include="js\bootstrap-datepicker.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.animateNumber.min.js" />
+    <Content Include="js\jquery.countdown.min.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.fancybox.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.stellar.min.js" />
+    <Content Include="js\jquery.sticky.js" />
+    <Content Include="js\jquery.waypoints.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mediaelement-and-player.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\slick.min.js" />
+    <Content Include="js\typed.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="Signup.aspx" />
+    <Content Include="Test.aspx" />
+    <Content Include="Testing.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Test3.aspx.cs">
+      <DependentUpon>Test3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Test3.aspx.designer.cs">
+      <DependentUpon>Test3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Testt1.aspx.cs">
+      <DependentUpon>Testt1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Testt1.aspx.designer.cs">
+      <DependentUpon>Testt1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnlockCust.aspx.cs">
+      <DependentUpon>UnlockCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UnlockCust.aspx.designer.cs">
+      <DependentUpon>UnlockCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateAbout.aspx.cs">
+      <DependentUpon>UpdateAbout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateAbout.aspx.designer.cs">
+      <DependentUpon>UpdateAbout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateContact.aspx.cs">
+      <DependentUpon>UpdateContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateContact.aspx.designer.cs">
+      <DependentUpon>UpdateContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateHome.aspx.cs">
+      <DependentUpon>UpdateHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateHome.aspx.designer.cs">
+      <DependentUpon>UpdateHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateSearch.aspx.cs">
+      <DependentUpon>UpdateSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateSearch.aspx.designer.cs">
+      <DependentUpon>UpdateSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppCode\encryption.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Array.aspx.cs">
+      <DependentUpon>Array.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Array.aspx.designer.cs">
+      <DependentUpon>Array.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\AddChildren.aspx.cs">
+      <DependentUpon>AddChildren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\AddChildren.aspx.designer.cs">
+      <DependentUpon>AddChildren.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Addparentchoose.aspx.cs">
+      <DependentUpon>Addparentchoose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Addparentchoose.aspx.designer.cs">
+      <DependentUpon>Addparentchoose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\AddParents.aspx.cs">
+      <DependentUpon>AddParents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\AddParents.aspx.designer.cs">
+      <DependentUpon>AddParents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Addpictures.aspx.cs">
+      <DependentUpon>Addpictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Addpictures.aspx.designer.cs">
+      <DependentUpon>Addpictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\AddSpouses.aspx.cs">
+      <DependentUpon>AddSpouses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\AddSpouses.aspx.designer.cs">
+      <DependentUpon>AddSpouses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Child.aspx.cs">
+      <DependentUpon>Add_Child.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Child.aspx.designer.cs">
+      <DependentUpon>Add_Child.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Parents.aspx.cs">
+      <DependentUpon>Add_Parents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Parents.aspx.designer.cs">
+      <DependentUpon>Add_Parents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Spouses.aspx.cs">
+      <DependentUpon>Add_Spouses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Add_Spouses.aspx.designer.cs">
+      <DependentUpon>Add_Spouses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\AllRequest.aspx.cs">
+      <DependentUpon>AllRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\AllRequest.aspx.designer.cs">
+      <DependentUpon>AllRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Edit_Parents.aspx.cs">
+      <DependentUpon>Edit_Parents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Edit_Parents.aspx.designer.cs">
+      <DependentUpon>Edit_Parents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\ExistingAllData.aspx.cs">
+      <DependentUpon>ExistingAllData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\ExistingAllData.aspx.designer.cs">
+      <DependentUpon>ExistingAllData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\FamilyForest.aspx.cs">
+      <DependentUpon>FamilyForest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\FamilyForest.aspx.designer.cs">
+      <DependentUpon>FamilyForest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Familymaster.Master.cs">
+      <DependentUpon>Familymaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Familymaster.Master.designer.cs">
+      <DependentUpon>Familymaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree.aspx.cs">
+      <DependentUpon>MyTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree.aspx.designer.cs">
+      <DependentUpon>MyTree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree1.aspx.cs">
+      <DependentUpon>MyTree1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree1.aspx.designer.cs">
+      <DependentUpon>MyTree1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree2.aspx.cs">
+      <DependentUpon>MyTree2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\MyTree2.aspx.designer.cs">
+      <DependentUpon>MyTree2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\NewChildren.aspx.cs">
+      <DependentUpon>NewChildren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\NewChildren.aspx.designer.cs">
+      <DependentUpon>NewChildren.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\NewPage.aspx.cs">
+      <DependentUpon>NewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\NewPage.aspx.designer.cs">
+      <DependentUpon>NewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\NewSpouse.aspx.cs">
+      <DependentUpon>NewSpouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\NewSpouse.aspx.designer.cs">
+      <DependentUpon>NewSpouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Parent.aspx.cs">
+      <DependentUpon>Parent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Parent.aspx.designer.cs">
+      <DependentUpon>Parent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Pictures.aspx.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Pictures.aspx.designer.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Popuptest.aspx.cs">
+      <DependentUpon>Popuptest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Popuptest.aspx.designer.cs">
+      <DependentUpon>Popuptest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\ProfileList.aspx.cs">
+      <DependentUpon>ProfileList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\ProfileList.aspx.designer.cs">
+      <DependentUpon>ProfileList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FamilyTree\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FamilyTree\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JoinUs.aspx.cs">
+      <DependentUpon>JoinUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JoinUs.aspx.designer.cs">
+      <DependentUpon>JoinUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Secureconnection.cs" />
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>29047</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:29047/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

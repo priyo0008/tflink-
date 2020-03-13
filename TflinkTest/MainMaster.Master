@@ -1,0 +1,245 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="TflinkTest.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head runat="server">
+    <title>The Family Link</title>
+    <meta charset="utf-8" />
+    <%--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />--%>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="animation_style.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <style>
+        body {
+        }
+
+        #wrapper {
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+     
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <div class="site-wrap" id="home-section">
+
+                <div class="site-mobile-menu site-navbar-target">
+                    <div class="site-mobile-menu-header">
+                        <div class="site-mobile-menu-close mt-3">
+                            <span class="icon-close2 js-menu-toggle"></span>
+                        </div>
+                    </div>
+                    <div class="site-mobile-menu-body"></div>
+                </div>
+
+
+
+                <header class="site-navbar site-navbar-target" role="banner">
+
+                    <div class="container">
+                        <div class="row align-items-center position-relative">
+
+                            <div class="col-3 ">
+                                <div class="site-logo">
+                                    <a href="index.html">
+                                        <img src="images/brand.png" alt="" title="" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-7  text-right">
+                                <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+
+                                <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                                    <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                                        <li><a href="Home.aspx" class="nav-link">Home</a></li>
+                                        <li><a href="Search.aspx" class="nav-link">Search</a></li>
+                                        <li><a href="AboutUs.aspx" class="nav-link">About Us</a></li>
+                                        <li><a href="Contact.aspx" class="nav-link">Contact</a></li>
+                                        <li>
+                                            <a href="#"></a>
+                                            <asp:Button ID="btn_loginv" class="btn btn-success btn-sm" OnClick="btn_join_Click" runat="server" Text="Log in" />
+
+                                            <asp:Button ID="btn_Joinus" class="btn btn-dark btn-sm" OnClick="btn_Joinus_Click" runat="server" Text="Join Us" />
+                                   
+                                
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-2  text-right">
+                                <div class="site-logo">
+                                    <div id="google_translate_element"></div>
+
+                                    <script type="text/javascript">
+                                        function googleTranslateElementInit() {
+                                            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                                        }
+                                    </script>
+                                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </header>
+
+                <div class="ftco-blocks-cover-1">
+                    <div class="ftco-cover-1 overlay" style="background-image: url('images/header-background.jpg'); width: 100%;">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-5 offset-lg-7">
+                                    <div class="feature-car-rent-box-1">
+                                        <h3>Login / Sign Up</h3>       
+                                        <div id="wrapper">
+                                            <div id="loginform">
+                                                <div id="container">
+                                                    <asp:Panel runat="server" DefaultButton="btn_Login">
+                                                    <div class="form-group">
+                                                        <label>User Id</label>
+                                                        <asp:TextBox ID="txt_Userid" class="form-control" runat="server"></asp:TextBox>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <asp:TextBox ID="txt_Password" class="form-control" type="password" runat="server"></asp:TextBox>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        If you do not have a Username & Password assigned to you, please signup to set up an account.
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <asp:Button ID="btn_Login" class="btn btn-primary" OnClick="btn_Login_Click" runat="server" Text="Login" />
+                                                        <asp:Button ID="btn_Signup" class="btn btn-info" OnClick="btn_Signup_Click" runat="server" Text="Sign up" />
+
+                                                    </div>
+                                                        </asp:Panel>
+                                                </div> 
+                                            </div>
+                                        </div>
+
+                                        <%-- <ul class="list-unstyled">
+                                            <li>
+                                                <span>Doors</span>
+                                                <span class="spec">4</span>
+                                            </li>
+                                            <li>
+                                                <span>Seats</span>
+                                                <span class="spec">6</span>
+                                            </li>
+                                            <li>
+                                                <span>Lugage</span>
+                                                <span class="spec">2 Suitcase/2 Bags</span>
+                                            </li>
+                                            <li>
+                                                <span>Transmission</span>
+                                                <span class="spec">Automatic</span>
+                                            </li>
+                                            <li>
+                                                <span>Minium age</span>
+                                                <span class="spec">Automatic</span>
+                                            </li>
+                                        </ul>
+                                        <div class="d-flex align-items-center bg-light p-3">
+                                            <span>$150/day</span>
+                                            <a href="contact.html" class="ml-auto btn btn-primary">Rent Now</a>
+                                        </div>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>Quick Links</h3>
+                            <p>Do you want to get involved on the ground floor of this exciting new start up? We are looking for people to help grow the program and promote the website.</p>
+                            <a href="AboutUs.aspx" class="footer-read">Read More</a>
+                        </div>
+                        <div class="col-lg-6 ml-auto">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Quick Links</h3>
+                                    <ul class="footer-navi">
+                                        <li><a href="/build-family-tree/Default.aspx" rel="home">Home</a></li>
+                                        <li><a href="/family-tree-free-search/Search.aspx">Search</a></li>
+                                        <!--li><a href="http://www.tflink.com/News.aspx">News</a></li>
+					  <li><a href="http://www.tflink.com/News.aspx" class="feed"><img src="http://www.tflink.com/pics/rssButton.gif" alt="Feed" />Forums</a></li-->
+                                        <!--li><a href="http://www.tflink.com/HowItWorks.aspx">How it Works</a></li>
+					  <li><a href="http://www.tflink.com/GettingStarted.aspx">Getting Started</a></li-->
+                                        <li><a href="/about-us/social-networking-for-families/AboutUs.aspx">About Us</a></li>
+                                        <li><a href="/contact-us/how-to-search-family-tree/ContactUs.aspx">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6">
+
+                                    <h3>Connect With Us</h3>
+                                    <asp:Label ID="lbl_online" runat="server" Text="" ForeColor="#CC0000"></asp:Label>
+                                    <a href="mailto:info@TFLink.com"><b>Email:</b>info@TFLink.com</a>
+                                    <a href="www.TFLink.com"><b>Web:</b>www.TFLink.com</a>
+                                    <ul>
+                                        <%--   <li><a href="https://www.facebook.com/"><i class="fa fa-facebook">&nbsp;</i></a></li>
+                                        <li><a href="https://twitter.com/?lang=en-in"><i class="fa fa-twitter">&nbsp;</i></a></li>
+                                        <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram">&nbsp;</i></a></li>
+                                        <li><a href="https://in.linkedin.com/"><i class="fa fa-linkedin">&nbsp;</i></a></li>--%>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-5 mt-5 text-center">
+                        <div class="col-md-12">
+                            <div class="border-top pt-5">
+                                <p>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    <%--Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i>by <a href="https://saintellectsolutions.com/" target="_blank">SAIS</a>--%>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    All security and privacy features are working and the program may be used.
+                                    If you have any questions and or comments, please email us at info@TFLink.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
+            <script src="js/jquery.waypoints.min.js"></script>
+            <script src="js/jquery.animateNumber.min.js"></script>
+            <script src="js/jquery.fancybox.min.js"></script>
+            <script src="js/jquery.easing.1.3.js"></script>
+            <script src="js/bootstrap-datepicker.min.js"></script>
+            <script src="js/aos.js"></script>
+
+            <script src="js/main.js"></script>
+        </div>
+    </form>
+</body>
+</html>

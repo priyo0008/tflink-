@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Familymaster.master.cs" Inherits="TflinkTest.FamilyTree.Familymaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1" />--%>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12">
+                    <div class="col-md-2">
+                        <h2>Control Panel</h2>
+                    </div>
+                    <div class="pull-right">
+                        <a href="../Default.aspx">
+                            <button type="button" class="btn btn-primary">Go to front Page</button></a>
+
+                        <%--<button type="button" class="btn btn-danger">Logout</button>--%>
+                        <asp:Button ID="btn_logout" class="btn btn-danger" runat="server" Text="Logout" OnClick="btn_logout_Click" />
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="Welcome.aspx">Welcome</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="Dashboard.aspx">Dashboard</a></li>
+                        <li><a href="ProfileList.aspx">Profiles | Control</a></li>
+                        <li><a href="MyTree1.aspx">My Family Tree</a></li>
+                        <%--class="active"--%>
+                        <li><a href="FamilyForest.aspx">Family Forest</a></li>
+                        <li><a href="Addpictures.aspx">Pictures</a></li>
+                        <%--<a href="Addpictures.aspx">Addpictures.aspx</a>--%>
+                        <li><a href="AllRequest.aspx">Requests<span runat="server" class="text-danger" id="bindcountreq"></span></a></li>
+                        <li><a href="Projects.aspx">Projects</a></li>
+                        <li><a href="../Search.aspx">Search</a></li>
+                        <%--<li><a href="#">Data</a></li>ExistingAllData.aspx--%>
+                    </ul>
+                </div>
+
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
