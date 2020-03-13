@@ -123,8 +123,7 @@ namespace TflinkTest
                     Response.Redirect("~/FamilyTree/MyTree1.aspx");
                 }
                 else
-                {
-
+                { 
                     if (Wrngpswatmpt == null || Wrngpswatmpt == "")
                     {
                         Wrngpswatmpt = "0";

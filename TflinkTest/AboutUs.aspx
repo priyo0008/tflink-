@@ -7,10 +7,8 @@
                         <div class="row mb-5">
                             <div class="col-12 mb-5">
                                 <h2>About Us</h2>
-                                <p id="content" runat="server">
-
-                                    </p>
-                                <h2></h2>
+                                <p id="content" runat="server"> 
+                                    </p> 
                             </div>
                         </div>  
                     </div>
